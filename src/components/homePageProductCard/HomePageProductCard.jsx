@@ -10,9 +10,6 @@ const HomePageProductCard = () => {
   const context = useContext(myContext);
   const {
     mode,
-    toggleMode,
-    searchkey,
-    setSearchkey,
     filterType,
     setFilterPrice,
     setFilterType,

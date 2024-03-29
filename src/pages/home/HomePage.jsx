@@ -3,8 +3,6 @@ import Layout from '../../components/layout/Layout';
 import HeroSection from '../../components/heroSection/HeroSection';
 import HomePageProductCard from '../../components/homePageProductCard/HomePageProductCard';
 import Track from '../../components/track/Track';
-import Filter from '../../components/filter/Filter';
-import SeeMore from '../../components/seeMore/SeeMore';
 import { Link } from 'react-router-dom';
 
 
