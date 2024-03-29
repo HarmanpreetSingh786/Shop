@@ -1,13 +1,21 @@
 /* eslint-disable react/prop-types */
 import { Navigate } from "react-router";
 
-function ProtectedRouteForAdmin ({children}) {
-    const user = JSON.parse(localStorage.getItem('users'))
-    if (user?.role === "admin") {
-      return children
+function ProtectedRouteForAdmin({ children }) {
+    const storedUser = localStorage.getItem('users');
+    let user = null;
+    try {
+        user = JSON.parse(storedUser);
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+        // Handle the error here, maybe by redirecting to a generic error page
+        return <Navigate to={'/error'} />;
     }
-    else {
-      return <Navigate to={'/login'}/>
+
+    if (user?.role === "admin") {
+        return children;
+    } else {
+        return <Navigate to={'/login'} />;
     }
 }
 
