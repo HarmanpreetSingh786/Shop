@@ -22,42 +22,43 @@ import ProtectedRouteForAdmin from "./protectedRoute/ProtectedRouteForAdmin";
 import CategoryPage from "./pages/category/CategoryPage"
 import Contact from "./pages/contact/contact"
 
-function App () {
+function App() {
   return (
     <MyState>
       <Router>
-        <ScrollTop/>
+        <ScrollTop />
         <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/*" element={<NoPage/>} />
-          <Route path="/productInfo/:id" element={<ProductInfo/>} />
-          <Route path="/category/:categoryname" element={<CategoryPage/>} />
-        <Route path="/cart" element={<CartPage/>} />
-        <Route path="/allProduct" element={<AllProduct/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/user-dashboard" element={<ProtectedRouteForUser>
-          <UserDashboard/>
-        </ProtectedRouteForUser>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/productInfo/:id" element={<ProductInfo />} />
+          <Route path="/category/:categoryname" element={<CategoryPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/allProduct" element={<AllProduct />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
 
-        <Route path="/admin-dashboard" element={<ProtectedRouteForAdmin>
-          <AdminDashboard/>
-        </ProtectedRouteForAdmin>} />
+          {/* Protected routes for user */}
+          <ProtectedRouteForUser path="/user-dashboard">
+            <Route element={<UserDashboard />} />
+          </ProtectedRouteForUser>
 
-        <Route path="/addproduct" element={<ProtectedRouteForAdmin>
-          <AddProductPage/>
-        </ProtectedRouteForAdmin>} />
+          {/* Protected routes for admin */}
+          <ProtectedRouteForAdmin path="/admin-dashboard">
+            <Route element={<AdminDashboard />} />
+          </ProtectedRouteForAdmin>
 
-        <Route path="/updateproduct/:id" element={<ProtectedRouteForAdmin>
-          <UpdateProductPage/>
-        </ProtectedRouteForAdmin>} />
+          <ProtectedRouteForAdmin path="/addproduct">
+            <Route element={<AddProductPage />} />
+          </ProtectedRouteForAdmin>
 
+          <ProtectedRouteForAdmin path="/updateproduct/:id">
+            <Route element={<UpdateProductPage />} />
+          </ProtectedRouteForAdmin>
+
+          <Route path="*" element={<NoPage />} />
         </Routes>
-        <Toaster/>
+        <Toaster />
       </Router>
     </MyState>
-  )
+  );
 }
-
-export default App
