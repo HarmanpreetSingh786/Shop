@@ -62,3 +62,5 @@ function App() {
     </MyState>
   );
 }
+
+export default App;
