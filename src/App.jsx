@@ -46,7 +46,7 @@ function App() {
           <ProtectedRouteForAdmin path="/admin-dashboard">
             <Route element={<AdminDashboard />} />
           </ProtectedRouteForAdmin>
-
+          
           <ProtectedRouteForAdmin path="/addproduct">
             <Route element={<AddProductPage />} />
           </ProtectedRouteForAdmin>
