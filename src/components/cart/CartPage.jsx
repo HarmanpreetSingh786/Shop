@@ -14,7 +14,7 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 import { Navigate } from "react-router-dom";
 import myContext from "../../context/myContext";
 
-const Cart = () =>  {
+const Cart = () => {
   const context = useContext(myContext);
   const { mode } = context;
 
@@ -221,7 +221,9 @@ const Cart = () =>  {
                         className="mx-1 h-7 w-9 rounded-md border text-center"
                         style={{ color: mode === "dark" ? "black" : "" }}
                         value={quantity}
+                        onChange={(e) => handleQuantityChange(e.target.value)}
                       />
+
                       <button
                         onClick={() => handleIncrement(id)}
                         type="button"
@@ -316,6 +318,6 @@ const Cart = () =>  {
       </div>
     </Layout>
   );
-}
+};
 
 export default Cart;
