@@ -14,7 +14,7 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 import { Navigate } from "react-router-dom";
 import myContext from "../../context/myContext";
 
-const Cart = async () =>  {
+const Cart = () =>  {
   const context = useContext(myContext);
   const { mode } = context;
 
