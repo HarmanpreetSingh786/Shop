@@ -16,7 +16,7 @@ function HomePage() {
       {/* <SeeMore/> */}
       <div className='flex justify-center -mt-10 mb-4 sm:mt-5'>
       <Link to="/allproduct">
-      <button className=' bg-gray-300 px-5 py-2 hover:bg-pink-700 hover:text-white rounded-xl'>See more</button>
+      <button className=' bg-gray-300 mt-10 lg:mt-5 px-5 py-2 hover:bg-pink-700 hover:text-white rounded-xl'>See more</button>
       </Link>
       </div>
       <Track/>
