@@ -100,11 +100,11 @@ const deleteCart = (item) => {
               .map((item, index) => {
                 const { id, title, price, productImageUrl } = item;
                 return (
-                  <div key={index} className="p-4 w-full md:w-1/4 hover:shadow">
+                  <div key={index} className="p-4  w-3/4 ml-auto mr-auto  md:w-1/4 hover:shadow">
                     <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-lg hover:shadow-gray-500 shadow-[inset_0_0_2px_rgba(0,0,0,0.9)]cursor-pointer">
                       <img
                         onClick={() => navigate(`productinfo/${id}`)}
-                        className="lg:h-52 p-3 pt-2 h-96 rounded-2xl w-full hover:scale-110 transition-scale-110  duration-300 ease-in-out object-contain"
+                        className="lg:h-52 p-3 pt-2 h-60 rounded-2xl w-full lg:hover:scale-110 transition-scale-110  duration-300 ease-in-out object-contain"
                         src={productImageUrl}
                         alt="image"
                       />

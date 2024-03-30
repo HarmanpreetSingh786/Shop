@@ -140,7 +140,7 @@ const navigateToRelatedProduct = (productId) => {
               <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
                 <div className="">
                   <div className="">
-                    <img className="w-full lg:h-[30em] object-contain" src={product?.productImageUrl} alt="" />
+                    <img className="w-64 ml-auto mr-auto lg:h-[30em] object-contain" src={product?.productImageUrl} alt="" />
                   </div>
                 </div>
               </div>

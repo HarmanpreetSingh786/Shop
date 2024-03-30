@@ -134,17 +134,17 @@ const ProductInfo = () => {
           <div className="container px-5 lg:px-0 py-5 mx-auto">
             <div className="flex flex-wrap -m-4  justify-center">
               {relatedProducts.map((relatedProduct) => (
-                <div key={relatedProduct.id} className="p-4 w-full md:w-1/4">
+                <div key={relatedProduct.id} className="p-4 md:w-1/4">
                   <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-lg hover:shadow-gray-500 shadow-[inset_0_0_2px_rgba(0,0,0,0.9)]cursor-pointer">
                   <img 
                   onClick={() => navigateToRelatedProduct(relatedProduct.id)}
-                  className="lg:h-52 p-3 pt-2 h-96 rounded-2xl w-full hover:scale-110 transition-scale-110  duration-300 ease-in-out object-contain" src={relatedProduct.productImageUrl} alt={relatedProduct.title} />
+                  className="lg:h-52 p-3 pt-2 h-60 rounded-2xl w-full lg:hover:scale-110 transition-scale-110  duration-300 ease-in-out object-contain" src={relatedProduct.productImageUrl} alt={relatedProduct.title} />
                   <div className="p-4">
-                    <h2 className="title-font text-lg font-medium text-gray-900 mb-3">{relatedProduct.title.substring(0, 21)}...</h2>
-                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                    <h2 className="title-font text-lg font-medium text-gray-900 mb-3" style={{ color: mode === "dark" ? "white" : "" }}>{relatedProduct.title.substring(0, 21)}...</h2>
+                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" >
                           ShopEaze
                         </h2>
-                      <span className="title-font text-lg font-medium text-gray-900 mb-3">₹ {relatedProduct.price}</span>
+                      <span className="title-font text-lg font-medium text-gray-900 mb-3" style={{ color: mode === "dark" ? "white" : "" }}>₹ {relatedProduct.price}</span>
                         </div>
                       <div className="flex justify-center mb-5  p-3 ">
                           {cartItems.some((p) => p.id === relatedProduct.id) ? (

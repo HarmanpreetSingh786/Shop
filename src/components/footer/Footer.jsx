@@ -57,12 +57,13 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
+                  <Link
+                  to={"/cart"}
                     className="text-white hover:font-bold hover:text-yellow-500 cursor-pointer"
                     style={{ color: mode === "dark" ? "#DDDDDD" : "" }}
                   >
                     Cart
-                  </a>
+                  </Link>
                 </li>
               </nav>
             </div>
